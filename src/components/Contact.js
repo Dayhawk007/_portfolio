@@ -101,11 +101,11 @@ function Contact() {
                       }
                     }}
                   >
-                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24">
                       <path d={item.icon} />
                     </svg>
                   </motion.div>
-                  <span className="text-xl">{item.text}</span>
+                  <span className="text-base md:text-xl break-all md:break-normal">{item.text}</span>
                 </motion.a>
               ))}
             </div>
