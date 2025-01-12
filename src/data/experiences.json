@@ -1,0 +1,28 @@
+{
+  "experiences": [
+    {
+      "title": "Software Developer",
+      "company": "Bryt",
+      "period": "Aug 2024 - Present",
+      "description": "Built and maintained a scalable mobile app suite with Flutter, Django, and MySQL, managing AWS infrastructure. Used GCP for log analysis and debugging, implemented GitHub Actions for CI/CD, and developed a test automation suite for Flutter apps."
+    },
+    {
+      "title": "SDE-1",
+      "company": "Parentune",
+      "period": "March 2024 - July 2024",
+      "description": "Built and maintained a scalable mobile app suite with Flutter, Django, and MySQL, managing AWS infrastructure. Used GCP for log analysis and debugging, implemented GitHub Actions for CI/CD, and developed a test automation suite for Flutter apps."
+    },
+    {
+      "title": "Software Development Engineer",
+      "company": "BookishSanta",
+      "period": "Nov 2022 - Dec 2023",
+      "description": "Built robust e-commerce backends with Node.js and TypeScript, optimized data imports (1M entries/sec), and created analytics dashboards with React. Improved API response times by 30% and page loads by 50% using MongoDB aggregation and memoization."
+    },
+    {
+      "title": "Unity Developer Intern",
+      "company": "IIT Indore",
+      "period": "Sep 2020 - Dec 2020",
+      "description": "Programmed game logic for controllers across WebGL, Android, and AR projects, specializing in Post-Processing, Lighting, Shaders, and EventSystems for third- and first-person games."
+    }
+  ]
+}

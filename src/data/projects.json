@@ -1,0 +1,41 @@
+{
+  "projects": [
+    {
+      "title": "Magurn",
+      "description": "A python application which scrapes data from torrent indexers and finds the best torrent magnet for the specific search term",
+      "technologies": ["Python", "Tkinter", "requests", "bs4", "ffmpeg"],
+      "link": "https://github.com/Dayhawk007/magurn"
+    },
+    {
+      "title": "MealGen",
+      "description": "A meal planning app that generates recipes based on selected ingredients, with JWT authentication and a clean Tailwind UI",
+      "technologies": ["Next.js", "Node.js", "MongoDB", "Express.js", "TypeScript", "Tailwind"],
+      "link": "https://github.com/Dayhawk007/recipe-web-app"
+    },
+    {
+      "title": "MusicX",
+      "description": "A Python GUI app to download songs and playlists from Spotify and YouTube with metadata support",
+      "technologies": ["Python", "Tkinter", "youtube-dl", "requests", "bs4", "ffmpeg"],
+      "link": "https://github.com/Dayhawk007/musicx"
+    },
+    {
+      "title": "Dress-AR",
+      "description": "AR web app for virtual clothing try-ons using 3D models and pose detection",
+      "technologies": ["React", "ThreeJs", "BlazePose", "Tailwind"],
+      "link": "https://github.com/Dayhawk007/dress-ar"
+    },
+    {
+      "title": "Picot",
+      "description": "Discord bot that fetches and delivers raw images from Pexels and Unsplash APIs for designers and developers",
+      "technologies": ["Python", "Discord.py", "Pexels API", "Unsplash API"],
+      "link": "https://github.com/Dayhawk007/Picot"
+    },
+    {
+      "title": "1hr",
+      "description": "A multi-dashboard platform for managing hiring processes between clients, vendors and admins with candidate tracking and job opening management",
+      "technologies": ["React", "Node.js", "MongoDB", "Express.js", "TypeScript", "Tailwind"],
+      "link": "https://github.com/Dayhawk007/1hr"
+    }
+  ]
+}
+
