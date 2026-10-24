@@ -60,36 +60,42 @@ Use sentence case in UI labels except for the `AYUSH` wordmark. Keep headings br
 
 ### Navigation
 
-The navigation is fixed, blurred, black, and divided with a faint animated line. Links receive a short underline reveal. On small screens, the hamburger opens a full-width overlay below the header.
+The navigation is a fixed command strip: `AYUSH.SH` anchors the left edge while all five numbered destinations remain visible as a single directory on desktop. The current section is a white block that glides between labels as the reader scrolls. Labels lift by two pixels on hover and their small index rule fills from left to right. This gives the navigation neo-brutalist structure without adding ornamental controls.
 
 - Keep the five existing labels and IDs synchronized.
 - Any added link needs a corresponding unique section ID.
-- Close the mobile menu after navigation; keep the main content blur as an orientation cue.
+- On small screens, collapse the directory into a boxed `[ INDEX ]` control. Its panel is the same numbered directory, not a separate navigation pattern; close it after a selection and keep the main-content blur as an orientation cue.
 - Use visible focus styles when evolving this component; the current custom button removes the browser outline and should be improved rather than copied blindly.
 
 ### Hero and primary CTA
 
-The hero pairs a direct introduction with a static, visible-grid composition. The CTA is a square outlined rectangle that inverts to white and shifts a few pixels on hover. Use a single primary action and link it to an on-page destination when possible.
+The hero pairs “Ayush here.” with a compact, looping role carousel—engineer, nerd, tinkerer, caffeine addict, maybe a sentient being, then the dry correction “Absolutely not.”—and a visible-grid composition. The descriptive paragraph beneath the carousel reads “I craft niche solutions, automate the tedious, and turn nuanced problems into systems that quietly work.” Each role enters with a clipped reveal, makes one short hard-edged glitch offset, and exits before the next appears. Primary buttons retain one boxed white face border and use a hard black upper-left shadow for neo-brutalist elevation; the shadow compresses on hover as the face inverts. Do not add a second outer outline. Use a single primary action and link it to an on-page destination when possible.
+
+The `SYSTEM / 01` composition may animate passively as a square-only neo-brutalist study. Keep the grid calm and use two thin square frames that contract through it toward the central icon tile; the next monochrome line-art visual—coffee, controller, bug, workstation—then crossfades in cleanly. Time outgoing and incoming icon fades to overlap, so the tile is never empty. Use only a subtle vertical bounce inside the tile. Keep borders thin, motion precise, and the palette strictly black and white. It should feel modern and editorial—not like a dashboard, loader, or sci-fi control panel.
+
+### Introduction opener
+
+The site opens with a full-screen editorial lock-up, not a name card: a compact, useful-work manifesto, one dry human aside, a thin progress rule, and minimal status metadata. The three-line statement, supporting copy, and status reveal in measured beats across a single roughly six-second sequence, then the opener softly clips into the portfolio. Each line has its own padded reveal mask, so animation never clips adjacent type or letterforms. Keep the copy concise and lightly witty—personality belongs in the words, not a busy illustration. Do not add secondary illustrations, loops, or interaction prompts. It uses the same monochrome grid and restrained straight-line motion as the rest of the site.
 
 ### Section heading
 
 All standard sections begin with a numbered, rule-led `section-kicker` and a large Space Grotesk heading. Reveal headings from a clipped container; do not vary heading animations between sections without a purpose.
 
-### Timeline
+### Career log
 
-Experience is a left-ruled vertical sequence: a 2px white line, white circular marker, title, organization/date metadata, and muted description. Preserve chronological reading order and keep descriptions outcome-focused.
+Experience is a system-log ledger rather than a conventional timeline. Each full-width record has a restrained `[ 01 ] / LOG` index rail, company and period on one compact top line, a role title, a short outcome-focused description, square stack tags, and one explicit `Impact →` line. Records are separated by thin rules and may tint softly on hover; invert only the index rail for the neo-brutalist response. On scroll, the record should rise into place as a single unit—do not animate each sentence or imitate a terminal.
 
-### Project card
+### Build archive
 
-Project cards occupy a one-column mobile / two-column medium-and-up grid. The first card may span the desktop grid to create deliberate asymmetry. The whole card is the external link. Use a thin border, a project index, clear title, short muted description, and square compact tags. On hover, invert the card and offset it 4px; avoid nesting other interactive controls inside the anchor.
+Work is a project cassette deck, not a career-log sequel or a grid of isolated cards. Four thin, numbered modules overlap with a small deliberate offset. Selecting a cassette pulls it to the front, inverts its entire surface to white, and opens one concise project brief: purpose, square stack tags, one `Capability →` receipt, and an external project link. Inactive cassettes show only their number, name, and type. Keep the response crisp and structural—no soft scaling, thumbnails, or dashboard decoration.
 
-### Skill tile
+### Capability sheet
 
-Skills are square-cornered outlined cells in a responsive 2/3/4-column grid. On hover they invert to white with black text and offset slightly; do not use soft scaling or bounce. Prefer concise canonical technology names.
+The toolkit is a tabbed capability sheet, not a generic skill grid or a dense command interface. Render technical categories—AI systems, languages, frontend and mobile, backend systems, data and insights, cloud and delivery, and engineering practice—as thin tabs across the top. Selecting one opens a single focused sheet with its index, category name, concise capability count, and short numbered list. Core languages and recognised frameworks belong in that list; specialised services, analytics, media, testing, and workflow tools live in a compact “Also worked with” rail. Keep only one category visible at a time. Preserve square rules, compact mono metadata, and whole-row inversion for list entries; the interaction should make technical depth easier to scan, not feel exhaustive or crowded.
 
-### Contact row
+### Closing statement
 
-Contact methods are full-width, outlined rows with an icon and readable destination. The entire row is interactive. Keep external links protected with `target="_blank"` and `rel="noopener noreferrer"`; `mailto:` remains in the same browsing context.
+The contact close is an editorial ending, not a card or a generic list of social links. Lead with one large, direct question, a short supporting sentence, and one white email-first action. LinkedIn and GitHub stay as quiet mono links beneath it, followed by a single low-key availability note. Preserve the generous empty space; do not introduce an illustrative metaphor. Keep all routes fully interactive, protect external links with `target="_blank"` and `rel="noopener noreferrer"`, and keep `mailto:` in the same browsing context.
 
 ## Motion
 
@@ -97,6 +103,7 @@ Two complementary mechanisms are in use:
 
 1. `.section-fade` uses an `IntersectionObserver` to move sections from `12px` below and fade them in over `0.45s`.
 2. Framer Motion handles clipped heading reveals, straight-line timeline drawing, and short offset/inversion feedback.
+3. The opener uses a one-time CSS sequence for its progress rule, name lock-up, and role descriptor, then clips away into the portfolio. It does not loop.
 
 Default timing is short and direct: `0.15–0.2s` for hover feedback, `0.35–0.5s` for entrance transitions, and modest staggered delays only for repeated items. There are no floating, pulsing, or spring animations.
 
@@ -111,11 +118,12 @@ When adding motion:
 
 | Range | Expected behavior |
 | --- | --- |
-| Mobile (default) | Single-column content, 2-column skills, hidden hero illustration, overlay navigation, compact text. |
-| `md` and up | Hero becomes two columns; project cards become two columns; skills become three columns; larger headings and comfortable side padding. |
-| `lg` and up | Desktop navigation replaces the menu button; skill grid becomes four columns. |
+| Mobile (default) | Single-column content, one-column capability lists, hidden hero illustration, overlay navigation, compact text, and wrapped technology tags. |
+| Up to `767px` | Experience entries, project cassettes, and the capability sheet remain single-column so their metadata never competes with content. |
+| `md` and up | Hero becomes two columns; the capability sheet restores its metadata column and two-column capability list; headings and side padding grow. |
+| `lg` and up | Desktop navigation replaces the menu button. |
 
-Build mobile-first. Test long project titles, long technology labels, and the email address at narrow widths; the contact label uses `break-all` on mobile specifically for this reason.
+Build mobile-first. Test long project titles, long technology labels, the rotating hero labels, and the email action at narrow widths. Avoid horizontal overflow; content should reflow rather than scale down.
 
 ## Accessibility and quality checklist
 

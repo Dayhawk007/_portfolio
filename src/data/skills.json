@@ -1,32 +1,32 @@
 {
-  "skills": [
-    "LLMs",
-    "RAG Pipelines",
-    "Agentic Workflows",
-    "LLM-as-a-Judge",
-    "Prompt Engineering",
-    "OpenAI & Gemini APIs",
-    "Chroma DB",
-    "Llama 2",
-    "Python",
-    "Django",
-    "FastAPI",
-    "GraphQL",
-    "React",
-    "Next.js",
-    "Flutter",
-    "TypeScript",
-    "MongoDB",
-    "PostgreSQL",
-    "Redis",
-    "AWS",
-    "GCP",
-    "Docker",
-    "Kubernetes",
-    "GitHub Actions",
-    "CI/CD",
-    "Tailwind CSS",
-    "HLS Streaming",
-    "Spec-Driven Development"
-  ]
+  "categories": {
+    "AI systems": {
+      "core": ["Large Language Models", "Generative AI", "RAG Pipelines", "Agentic Workflows", "LLM-as-a-Judge", "Prompt Engineering", "Fine-Tuning", "NLP"],
+      "supporting": ["OpenAI API", "Gemini API", "Llama 2", "Chroma DB", "Vector Databases", "Semantic Search"]
+    },
+    "Languages": {
+      "core": ["Python", "JavaScript (ES6)", "TypeScript", "Dart", "PHP", "C#"],
+      "supporting": []
+    },
+    "Frontend & mobile": {
+      "core": ["React", "Next.js", "Flutter", "HTML5 / CSS3", "Tailwind CSS", "Bootstrap", "Redux", "Zustand", "Riverpod"],
+      "supporting": ["SPA Development", "WebGL", "Unity", "Android Deployment", "AR Deployment"]
+    },
+    "Backend systems": {
+      "core": ["Node.js", "Express.js", "Django", "FastAPI", "Flask", "GraphQL", "REST APIs", "Microservices", "Asynchronous Programming"],
+      "supporting": ["Repository Pattern", "HLS Streaming", "Adaptive Video Delivery"]
+    },
+    "Data & insights": {
+      "core": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "ETL Pipelines", "PostHog", "Metabase", "Google Analytics 4", "Mixpanel"],
+      "supporting": ["QuestionPro", "Caching", "Product Analytics"]
+    },
+    "Cloud & delivery": {
+      "core": ["AWS", "GCP", "Docker", "Kubernetes", "GitHub Actions", "CI/CD", "CDN Integration"],
+      "supporting": ["EC2", "ECS", "Fargate", "Lambda", "EventBridge", "SQS", "S3", "GKE", "Docker Compose"]
+    },
+    "Engineering practice": {
+      "core": ["Spec-Driven Development", "System Design", "HLD / LLD", "Performance Optimisation", "Security Auditing"],
+      "supporting": ["Patrol", "Charles Proxy", "Cursor", "Claude Code"]
+    }
+  }
 }

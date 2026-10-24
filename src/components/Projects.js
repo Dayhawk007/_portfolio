@@ -1,66 +1,67 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import projectsData from '../data/projects.json';
 
 function Projects() {
   const { projects } = projectsData;
+  const [activeProject, setActiveProject] = useState(0);
 
   return (
     <section id="projects" className="section-fade py-20">
-      <div className="container mx-auto px-8 md:px-10 max-w-7xl">
-        <p className="section-kicker">03 / Selected work</p>
-        <div className="overflow-hidden mb-16">
+      <div className="container mx-auto max-w-7xl px-8 md:px-10">
+        <p className="section-kicker">03 / Selected builds</p>
+        <div className="mb-16 overflow-hidden">
           <motion.h2
             initial={{ y: '110%' }}
-            whileInView={{ y: 0 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.45, ease: 'easeOut' }}
-            className="text-5xl md:text-6xl font-medium font-spaceGrotesk"
+            className="font-spaceGrotesk text-5xl font-medium md:text-6xl"
           >
-            Projects
+            Work, with receipts.
           </motion.h2>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div className="project-cassettes" aria-label="Selected projects">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
+            <motion.article
+              key={project.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.12 }}
-              className={`group ${index === 0 ? 'md:col-span-2' : ''}`}
+              viewport={{ once: true, amount: 0.16 }}
+              transition={{ duration: 0.42, delay: index * 0.07, ease: 'easeOut' }}
+              className={`project-cassette ${activeProject === index ? 'project-cassette--active' : ''}`}
+              style={{ '--cassette-index': index, zIndex: activeProject === index ? projects.length + 1 : projects.length - index }}
             >
-              <a 
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="focus-ring block"
-              >
-                <div className="relative border border-white/30 bg-black transition-all duration-150 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:bg-white group-hover:text-black group-hover:shadow-[-5px_-5px_0_0_rgba(255,255,255,0.45)]">
-                  <div className="absolute top-0 left-0 h-1 w-0 bg-white transition-all duration-300 group-hover:w-full group-hover:bg-black" />
-                  <div className="p-6 space-y-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-2xl font-medium transition-colors">
-                      {project.title}
-                      </h3>
-                      <span className="text-xs tracking-[0.16em] text-gray-500 group-hover:text-black">0{index + 1}</span>
-                    </div>
-                    <p className="text-gray-400 transition-colors group-hover:text-black/70">
-                      {project.description}
+              <div className="project-cassette__shell">
+                <button
+                  type="button"
+                  className="project-cassette__toggle"
+                  onClick={() => setActiveProject(index)}
+                  aria-expanded={activeProject === index}
+                >
+                  <span className="project-cassette__number">[ {String(index + 1).padStart(2, '0')} ]</span>
+                  <span className="project-cassette__title">{project.title}</span>
+                  <span className="project-cassette__type">{project.type}</span>
+                  <span className="project-cassette__control" aria-hidden="true">{activeProject === index ? '−' : '+'}</span>
+                </button>
+
+                <div className="project-cassette__details">
+                  <p className="project-cassette__description">{project.description}</p>
+                  <div className="project-cassette__footer">
+                    <ul className="project-cassette__stack" aria-label={`${project.title} technologies`}>
+                      {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
+                    </ul>
+                    <p className="project-cassette__highlight">
+                      <span>Capability →</span>
+                      {project.highlight}
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 text-sm border border-white/20 rounded-none
-                                   bg-white/5 transition-colors group-hover:border-black/30 group-hover:bg-black/5"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
                   </div>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-cassette__link">
+                    {project.linkLabel} <span aria-hidden="true">↗</span>
+                  </a>
                 </div>
-              </a>
-            </motion.div>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>

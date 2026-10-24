@@ -4,25 +4,33 @@
       "title": "Software Engineer",
       "company": "BRYT",
       "period": "Aug 2024 – Present",
-      "description": "Build AI-native full-stack microservices with Flutter, Django, GraphQL, and AWS. Developed agentic tutoring workflows with OpenAI and Gemini, improved system load times by 90% through GraphQL, SQS, and Redis optimization, and reduced S3 bandwidth costs by 50% with CDN-backed adaptive HLS streaming."
+      "description": "Build full-stack microservices and agentic tutoring workflows, with an eye on the unglamorous work of making systems faster and cheaper. I also orchestrate end-to-end workflows, build teacher-facing insights, and close findings from focused security audits.",
+      "stack": ["Flutter", "Django", "GraphQL", "AWS", "Security audit"],
+      "impact": "90% faster system loads · 50% less S3 bandwidth"
     },
     {
       "title": "SDE-1, Backend",
       "company": "Parentune",
       "period": "Mar 2024 – Jul 2024",
-      "description": "Built Parenting-GPT in under 15 days using a custom RAG pipeline with Chroma DB and semantic search, and fine-tuned Llama 2 8B for on-premise NLP. Modernized GCP Kubernetes microservices and the React/Tailwind product while reducing cloud storage costs by 70% and recommendation-dashboard load time by 65%."
+      "description": "Built Parenting-GPT in under 15 days, then modernized a GCP/Kubernetes product stack and its recommendation dashboard. Worked across Flask, PHP, Django, React, and MySQL.",
+      "stack": ["RAG", "Chroma DB", "Llama 2", "GCP"],
+      "impact": "70% lower storage cost · 65% faster dashboard"
     },
     {
       "title": "Software Development Engineer",
       "company": "BookishSanta",
       "period": "Nov 2022 – Dec 2023",
-      "description": "Improved core API latency by 60% and page-load time by 50% in a high-availability MERN environment. Built Python ETL pipelines that processed 1M events per second for real-time React analytics and managed resilient AWS EC2 deployments for e-commerce operations."
+      "description": "Improved a high-availability MERN platform, built high-throughput React analytics pipelines, and kept e-commerce infrastructure resilient.",
+      "stack": ["MERN", "React", "Python", "ETL", "AWS"],
+      "impact": "60% lower API latency · 1M events / sec"
     },
     {
       "title": "Unity Developer Intern",
       "company": "IIT Indore",
       "period": "Sep 2020 – Nov 2020",
-      "description": "Programmed modular C# state machines and optimized rendering pipelines for cross-platform WebGL, Android, and AR experiences."
+      "description": "Programmed modular C# state machines and tuned rendering pipelines for cross-platform interactive experiences.",
+      "stack": ["Unity", "C#", "WebGL", "AR"],
+      "impact": "WebGL · Android · AR delivery"
     }
   ]
 }

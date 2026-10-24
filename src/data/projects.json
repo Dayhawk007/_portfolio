@@ -2,21 +2,39 @@
   "projects": [
     {
       "title": "Routines",
-      "description": "A conversational NLP habit companion. Engineered its core AI architecture and frontend UI, and authored product requirements for low-latency, behavior-driven LLM interactions.",
-      "technologies": ["LLMs", "NLP", "React", "Product Design"],
-      "link": "https://routines.living"
+      "type": "Live product",
+      "description": "A companion-style habit app that turns conversation into organised trackers and goals, with AI-assisted habit extraction instead of a standard checkbox routine.",
+      "highlight": "Conversation → goal-ready habit trackers",
+      "technologies": ["Flutter", "FastAPI", "PostgreSQL", "Gemini", "SQLAlchemy", "React"],
+      "link": "https://routines.living",
+      "linkLabel": "View project"
     },
     {
-      "title": "MealGen",
-      "description": "A responsive meal-planning SPA that generates recipes from selected ingredients, with JWT authentication, MongoDB persistence, and an accessible Tailwind interface.",
-      "technologies": ["Next.js", "Node.js", "MongoDB", "Express.js", "TypeScript", "Tailwind CSS"],
-      "link": "https://github.com/Dayhawk007/recipe-web-app"
+      "title": "Float",
+      "type": "Local-first utility",
+      "description": "A private Android shelf for reusable notes, templates, links, and clipboard snippets, paired locally with a desktop CLI and MCP server for AI tools.",
+      "highlight": "Private pairing · no account or cloud dependency",
+      "technologies": ["Flutter", "TypeScript", "MCP", "QR pairing"],
+      "link": "https://github.com/Dayhawk007/float",
+      "linkLabel": "View source"
+    },
+    {
+      "title": "Magurn",
+      "type": "CLI tool",
+      "description": "A Python command-line utility that searches peer-to-peer index metadata and finds a relevant magnet result for a query.",
+      "highlight": "Search-to-match workflow in the terminal",
+      "technologies": ["Python", "Requests", "BeautifulSoup", "CLI"],
+      "link": "https://github.com/Dayhawk007/magurn",
+      "linkLabel": "View source"
     },
     {
       "title": "MusicX",
-      "description": "A Python automation application for media-stream processing, playlists, and system-level metadata injection.",
-      "technologies": ["Python", "youtube-dl", "BeautifulSoup", "ffmpeg"],
-      "link": "https://github.com/Dayhawk007/musicx"
+      "type": "Desktop utility",
+      "description": "A Python desktop media helper for title searches and supported YouTube or Spotify playlist workflows.",
+      "highlight": "Search input or playlist URL → organised media workflow",
+      "technologies": ["Python", "PyQt5", "pytube", "FFmpeg"],
+      "link": "https://github.com/Dayhawk007/musicx",
+      "linkLabel": "View source"
     }
   ]
 }
