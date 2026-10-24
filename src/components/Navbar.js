@@ -4,7 +4,7 @@ function Navbar({ isMenuOpen, setIsMenuOpen }) {
       <div className="container mx-auto px-6 relative">
         <div className="flex justify-between items-center h-20 relative">
           {/* Logo with enhanced hover effect */}
-          <a href="#" className="text-3xl font-medium tracking-wider font-spaceGrotesk relative group">
+          <a href="#about" className="text-3xl font-medium tracking-wider font-spaceGrotesk relative group">
             <span className="relative z-10 transition-colors duration-300 group-hover:text-gray-300">AYUSH</span>
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white/50 transition-all duration-300 group-hover:w-full"></span>
           </a>
@@ -87,4 +87,4 @@ function Navbar({ isMenuOpen, setIsMenuOpen }) {
   );
 }
 
-export default Navbar; 
+export default Navbar;

@@ -5,32 +5,26 @@ function Contact() {
     <section id="contact" className="section-fade py-20">
       <div className="container mx-auto px-8 md:px-10 max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ 
-            duration: 0.8, 
-            ease: "easeOut",
-            type: "spring",
-            stiffness: 100,
-            damping: 20
+            duration: 0.45,
+            ease: "easeOut"
           }}
           viewport={{ margin: "-50px" }}
         >
-          <motion.h2 
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8,
-              ease: "easeOut",
-              type: "spring",
-              stiffness: 100,
-              damping: 20
-            }}
-            viewport={{ margin: "-50px" }}
-            className="text-5xl md:text-6xl font-medium mb-16 font-spaceGrotesk"
-          >
-            Let's Connect
-          </motion.h2>
+          <p className="section-kicker">05 / Contact</p>
+          <div className="overflow-hidden mb-16">
+            <motion.h2
+              initial={{ y: '110%' }}
+              whileInView={{ y: 0 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              viewport={{ margin: "-50px" }}
+              className="text-5xl md:text-6xl font-medium font-spaceGrotesk"
+            >
+              Let's Connect
+            </motion.h2>
+          </div>
           <div className="max-w-6xl mx-auto">
             <div className="space-y-6">
               {[
@@ -54,53 +48,32 @@ function Contact() {
                   key={index}
                   initial={{ 
                     opacity: 0, 
-                    y: 60,
-                    scale: 0.9,
-                    filter: "blur(5px)"
+                    y: 16
                   }}
                   whileInView={{ 
                     opacity: 1, 
-                    y: 0,
-                    scale: 1,
-                    filter: "blur(0px)"
+                    y: 0
                   }}
                   transition={{ 
-                    duration: 0.8,
-                    delay: index * 0.15,
-                    ease: "easeOut",
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 15,
-                    opacity: { duration: 0.4 },
-                    filter: { duration: 0.4 }
+                    duration: 0.4,
+                    delay: index * 0.1,
+                    ease: "easeOut"
                   }}
                   viewport={{ margin: "-50px" }}
                   whileHover={{ 
-                    scale: 1.05,
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    y: -8,
-                    transition: {
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 10
-                    }
+                    x: 4,
+                    y: 4,
+                    backgroundColor: "rgba(255, 255, 255, 1)",
+                    color: "rgba(0, 0, 0, 1)",
+                    boxShadow: "-4px -4px 0 0 rgba(255, 255, 255, 0.4)",
+                    transition: { duration: 0.15 }
                   }}
                   href={item.href}
                   target={item.href.startsWith('mailto') ? undefined : "_blank"}
                   rel={item.href.startsWith('mailto') ? undefined : "noopener noreferrer"}
-                  className="flex items-center space-x-4 p-4 border border-white/20 rounded-lg backdrop-blur-sm"
+                  className="focus-ring flex items-center space-x-4 p-4 border border-white/30 bg-black"
                 >
-                  <motion.div
-                    whileHover={{ 
-                      rotate: 20,
-                      scale: 1.2,
-                      transition: {
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 8
-                      }
-                    }}
-                  >
+                  <motion.div>
                     <svg className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24">
                       <path d={item.icon} />
                     </svg>
@@ -116,4 +89,4 @@ function Contact() {
   );
 }
 
-export default Contact; 
+export default Contact;

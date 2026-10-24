@@ -30,9 +30,9 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="app-shell bg-black text-white min-h-screen">
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <main className={`container mx-auto px-4 py-8 ${isMenuOpen ? 'blur-sm' : ''}`}>
+      <main className={`relative z-10 container mx-auto px-4 py-8 ${isMenuOpen ? 'blur-sm' : ''}`}>
         <About />
         <Experience />
         <Projects />

@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Ayush Chandwani — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single-page developer portfolio for Ayush Chandwani. The site presents professional experience, selected projects, automatically derived skills, and contact channels in a focused monochrome interface.
 
-## Available Scripts
+**Live site:** [dayhawk007.github.io/_portfolio](https://dayhawk007.github.io/_portfolio)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+This is a Create React App project styled with Tailwind CSS and animated with Framer Motion. The experience is intentionally content-led: a fixed navigation bar guides readers through five sections, while small reveal and hover transitions provide feedback without competing with the work.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Area | Source of truth |
+| --- | --- |
+| App composition and mobile-menu state | `src/App.js` |
+| Global behavior and reveal utility | `src/index.css` |
+| Navigation and page sections | `src/components/` |
+| Portfolio content | `src/data/projects.json`, `src/data/experiences.json`, `src/data/skills.json` |
+| Visual conventions and contributor guidance | [DESIGN_STYLE_GUIDE.md](DESIGN_STYLE_GUIDE.md) |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Stack
 
-### `npm test`
+- React 19 and Create React App
+- Tailwind CSS 3
+- Framer Motion
+- Static JSON content files
+- GitHub Pages deployment via `gh-pages`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Local development
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js 18 or newer
+- npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run the site
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+npm start
+```
 
-### `npm run eject`
+Open [http://localhost:3000](http://localhost:3000). Changes to source files reload automatically.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Useful commands
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Command | Purpose |
+| --- | --- |
+| `npm start` | Start the development server. |
+| `npm test` | Run the React test suite in watch mode. |
+| `npm run build` | Create an optimized production build in `build/`. |
+| `npm run deploy` | Build and publish the site to GitHub Pages. |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Content updates
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Portfolio content is deliberately separated from presentational components.
 
-## Learn More
+- Add, remove, or edit project cards in `src/data/projects.json`.
+- Update timeline entries in `src/data/experiences.json`.
+- Update the current, profile-backed skill set in `src/data/skills.json`.
+- Update contact destinations in `src/components/Contact.js`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Keep descriptions concise, outcome-oriented, and plain-text. Project links are opened in a new tab with `noopener noreferrer` protection.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project structure
 
-### Code Splitting
+```text
+src/
+├── components/       # Navbar and the five portfolio sections
+├── data/             # Projects and experience content
+├── App.js            # Section order, menu state, intersection observer
+├── index.css         # Tailwind layers and global reveal/scroll behavior
+└── App.css           # Legacy Create React App stylesheet (not imported)
+public/               # HTML shell, metadata, icons, manifest
+tailwind.config.js    # Font and animation extensions
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Design and contribution conventions
 
-### Analyzing the Bundle Size
+The visual language is a high-contrast, editorial monochrome system with sparse blue/purple accent atmosphere. Before changing layout, typography, animation, or components, follow the [design and style guide](DESIGN_STYLE_GUIDE.md). It records the existing tokens, responsive patterns, motion rules, accessibility guardrails, and component recipes so new work remains cohesive.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Deployment
 
-### Making a Progressive Web App
+The `homepage` field points to the GitHub Pages location. To publish from an appropriately configured repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run deploy
+```
 
-### Advanced Configuration
+This runs the production build and publishes `build/` with `gh-pages`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Notes for maintainers
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Preserve the section IDs (`about`, `experience`, `projects`, `skills`, `contact`), since navigation and the primary call to action rely on them.
+- The app uses both the global `.section-fade` observer and Framer Motion. Avoid layering multiple entrance effects on the same element unless the resulting motion is deliberately tested.
+- `App.css` contains untouched Create React App starter styles and is currently not imported; avoid treating it as part of the active design system.

@@ -1,0 +1,32 @@
+{
+  "skills": [
+    "LLMs",
+    "RAG Pipelines",
+    "Agentic Workflows",
+    "LLM-as-a-Judge",
+    "Prompt Engineering",
+    "OpenAI & Gemini APIs",
+    "Chroma DB",
+    "Llama 2",
+    "Python",
+    "Django",
+    "FastAPI",
+    "GraphQL",
+    "React",
+    "Next.js",
+    "Flutter",
+    "TypeScript",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
+    "AWS",
+    "GCP",
+    "Docker",
+    "Kubernetes",
+    "GitHub Actions",
+    "CI/CD",
+    "Tailwind CSS",
+    "HLS Streaming",
+    "Spec-Driven Development"
+  ]
+}
